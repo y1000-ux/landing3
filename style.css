@@ -1,0 +1,473 @@
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --secondary: #0f172a;
+    --bg-light: #f8fafc;
+    --text-light: #64748b;
+    --text-dark: #334155;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--text-light);
+    line-height: 1.6;
+    scroll-snap-align: start;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 8%;
+    scroll-snap-align: start;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255,255,255,0.95);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-weight: 500;
+    color: var(--secondary);
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary);
+}
+
+.btn-secondary {
+    border: 2px solid var(--bg-light);
+    color: var(--white);
+    background: transparent;
+    transition: all;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-4px);
+}
+
+.hero-container {
+    position: relative;
+    text-align: center;
+    color: var(--white);
+}
+
+.hero-container img {
+    width: 1000px;
+    height: 500px;
+    display: block;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    margin-left: 60px;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: rgba(255,255,255,0.1);
+    border: none;
+    padding: 15px 25px;
+    text-align: center;
+}
+
+.hero-content h1 {
+    color: var(--primary-dark);
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+.hero-content p {
+    color: var(--white);
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.hero-buttons {
+    text-align: center;
+    margin-top: 20px;
+    gap: 30px
+}
+
+.subtitle {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-light);
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--secondary);
+}
+
+.about-grid {
+    grid-template-columns: repeat(3,1fr);
+    gap: 60px;
+}
+
+.about-card {
+    margin-top: 20px;
+    background-color: var(--white);
+    padding: 20px 50px;
+    border-radius: 12px;
+    display: block;
+    border: 1px solid var(--bg-light);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.about-card h3 {
+    color: var(--primary);
+    font-size: 26px;
+}
+
+.about-card p {
+    color: var(--text-dark);
+    font-size: 16px;
+}
+
+.services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.services-card {
+    background-color: var(--white);
+    padding: 40px 30px;
+    border-radius: 8px;
+    border: 2px solid var(--bg-light);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.services-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.services-card h3 {
+    font-size: 20px;
+    color: var(--secondary);
+}
+
+.services-card p {
+    font-size: 16px;
+}
+
+.center-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--secondary);
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+}
+
+.why-card {
+    background-color: var(--white);
+    border-radius: 20px;
+    border: 1px solid var(--bg-light);
+    display: flex;
+    padding: 50px 120px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    transition: transform 0.3s, box-shadow 0.3s;
+    align-items: center;
+    justify-content: center;
+}
+
+.why-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.why-card h3 {
+    font-size: 16px;
+    color: var(--text-light);
+}
+
+.stats-grid h3 {
+    color: var(--primary);
+    font-size: 32px;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+.stats-grid p {
+    color: var(--secondary);
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    display: flex;
+    gap: 30px;
+    margin-top: 70px;
+    margin-left: 50px;
+}
+
+.testi p {
+    display: flex;
+    color: var(--secondary);
+    font-size: 20px;
+    margin-left: 50px;
+}
+
+.testi span {
+    display: flex;
+    color: var(--text-dark);
+    font-size: 20px;
+    margin-left: 50px;
+}
+
+.login-wrapper {
+    position: relative;
+    width: 400px;
+    padding: 40px;
+    background-color: rgba(0,0,0,0.05);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+    backdrop-filter: blur (10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    margin-top: 150px;
+    margin-left: 400px;
+    margin-bottom: 150px;
+}
+
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 10px;
+    background: var(--white);
+    border: 2px solid var(--primary-dark);
+    border-bottom: 2px color var(--white);
+    border-radius: 8px;
+    outline: none;
+    color: var(--white);
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.input-group label {
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-light);
+    font-size: 16px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.btn-outline {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, #a855f7, #6366f1);
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.3s ease;
+}
+
+.btn-outline:hover {
+    box-shadow: 0 0 15px rgba (168,85,247,0.4);
+}
+
+.footer-col {
+    margin-top: 20px;
+    color: var(--white);
+    border: 1px solid var(--bg-light);
+    background-color: var(--secondary);
+}
+
+.footer h4 {
+    color: var(--white);
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.footer p {
+    color: var(--white);
+    font-size: 16px;
+    margin-left: 20px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 40px;
+}
+
+.mini-card {
+    display: block;
+    background: var(--white);
+    border: 1px solid var(--bg-light);
+    border-radius: 16px;
+    padding: 80px 40px ;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    box-shadow: 10px 10px 10px var(--text-dark);
+    transition: border-box 0.3s, ease;
+    margin-left: 100px;
+}
+
+.mini-card:hover {
+    transform: translateY(-4px);
+}
+
+@media (min-width: 375px) {
+    body {
+        padding: 30px 20px;
+    }
+
+h1 { font-size: clamp(1rem, 2vw, 2.5rem);
+}
+
+p {
+    font-size: clamp(16px, 2vw, 18px);
+}
+
+h2 {
+    font-size: clamp(28px, 4vw, 36px);
+}
+
+h3 {
+    font-size: clamp(20px, 3vw, 24px);
+}
+
+h4 {
+    font-size: clamp(18px, 1vw, 12px);
+}
+
+.cards {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.about-card {
+    display: grid;
+    grid-template-columns: 1fr;
+
+}
+
+.img {
+    max-width: 100%;
+    height: auto;
+}
+
+.login-wrapper {
+    padding: 30px 20px;
+    border-radius: 8px;
+}
+
+.login-form h1 {
+    font-size: 1.5rem;
+}
+
+}
+
